@@ -1,0 +1,42 @@
+form {
+  min-width: 50%;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 2.5em;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.10em;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: white;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
