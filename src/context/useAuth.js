@@ -36,7 +36,7 @@ export function UserProvider() {
       }
     }
     fetchMe()
-  })
+  }, [])
 
   return (
     <UserContext.Provider value={{ user: user, setUser }}>

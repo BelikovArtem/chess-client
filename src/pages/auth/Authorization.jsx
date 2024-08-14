@@ -64,7 +64,7 @@ export default function Authorization() {
   }
 
   return (
-    <section className="main-container">
+    <section className="auth-container">
       <h1>
         Authorization
       </h1>

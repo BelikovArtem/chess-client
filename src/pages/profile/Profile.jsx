@@ -1,8 +1,19 @@
 import { useAuth } from "../../context/useAuth"
+import Button from "../../components/button/Button"
+import Sidebar from "../../components/sidebar/Sidebar.jsx"
 import "./Profile.css"
+
+import { useNavigate } from "react-router-dom"
+
+import api from "../../api/api.js"
+import { useState } from "react"
 
 export default function Profile() {
   const { user } = useAuth()
+
+  const navigate = useNavigate()
+
+  const [errMsg, setErrMsg] = useState("")
 
   function formatRegistrationDate(dateStr) {
     // timestamp in format yyyy-mm-dd
@@ -12,8 +23,19 @@ export default function Profile() {
     return `${dateParts[1]}/${dateParts[2]}/${dateParts[0]}`  // mm/dd/yyyy
   }
 
+  async function handleSignOut() {
+    const isSuccess = await api.signOut()
+
+    if (isSuccess) {
+      navigate("/auth")
+    } else {
+
+    }
+  }
+
   return (
-    <section>
+    <section className="profile">
+      <Sidebar />
       <h1>
         Username: {user.username}
       </h1>
@@ -21,8 +43,8 @@ export default function Profile() {
         Ratings:
         <ul>
           <li>Blitz: {user.blitzRating}</li>
-          <li>Rapid: {user.rapidRating}</li>
           <li>Bullet: {user.bulletRating}</li>
+          <li>Rapid: {user.rapidRating}</li>
         </ul>
       </h2>
       <h2>
@@ -34,6 +56,7 @@ export default function Profile() {
           formatRegistrationDate(user.registeredAt)
         }
       </h3>
+      <Button onClick text="Sign Out"></Button>
     </section>
   )
 }

@@ -1,0 +1,151 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 2rem 2rem;
+  background-color: black;
+  height: 100%;
+}
+
+.sidebar .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 3rem;
+}
+
+.sidebar .logo-container img {
+  width: auto;
+  height: 5rem;
+}
+
+.sidebar .sidebar-container {
+  background-color: white;
+  position: absolute;
+  right: calc(-35px / 2);
+  top: calc(9rem / 1.15);
+  width: 35px;
+  height: 35px;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.sidebar .sidebar-container::after {
+  content: "";
+  position: absolute;
+  right: 35px;
+  top: 18px;
+  z-index: 0;
+  width: calc(24rem);
+  background-color: white;
+  height: 2px;
+  transition: 0.5s all;
+}
+
+
+.sidebar .sidebar-container .sidebar-toggle {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  opacity: zero;
+  border-radius: 15px;
+}
+
+.sidebar .sidebar-container .sidebar-menu {
+  background-color: black;
+  content: "";
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 3px;
+  border-radius: 2rem;
+  bottom: calc(35px /2);
+  left: 0.45rem;
+}
+
+.sidebar .sidebar-container .sidebar-menu::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  border-radius: 2rem;
+  top: 0.45rem;
+}
+
+.sidebar .sidebar-container .sidebar-menu::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  border-radius: 2rem;
+  top: -0.45rem;
+}
+
+.sidebar .content-container ul {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .content-container ul li {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sidebar .content-container ul li.active {
+  border-radius: 15px;
+  border: solid white;
+  border-width: 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.sidebar .content-container ul li img {
+  width: auto;
+  height: 4rem;
+  padding-right: 1rem;
+}
+
+.sidebar .theme-toggle {
+  position: relative;
+  bottom: 0;
+}
+
+.sidebar.hidden {
+  width: 3rem;
+}
+
+.sidebar.hidden h4 {
+  display: none;
+}
+
+.sidebar.hidden h1 {
+  display: none;
+}
+
+.sidebar .content-container ul li.active-hidden {
+  border-radius: 15px;
+  border: solid white;
+  border-width: 2px;
+  width: 135%;
+}
+
+h1 {
+  font-size: 31.42px;
+}
+
+h1.title.hidden {
+  display: none;
+}

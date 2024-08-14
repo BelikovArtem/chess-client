@@ -1,6 +1,6 @@
 /** This class describes the interactions with the API.  */
 class Api {
-  /** The constructor innitializes the server url constant. */
+  /** This constructor initializes the server url constant. */
   constructor() {
     this.serverUrl = "http://localhost:3501"
   }
