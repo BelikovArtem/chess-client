@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom"
-import chessIcon from "../../assets/chess-icon.png"
-import profile from "../../assets/profile.png"
+import { Link, useLocation } from "react-router-dom"
+
 import timer from "../../assets/timer.png"
 import trophy from "../../assets/trophy.png"
+import profile from "../../assets/profile.png"
 import settings from "../../assets/settings.png"
+import chessIcon from "../../assets/chess-icon.png"
 
 import "./Sidebar.css"
 
-import { useAuth } from "../../context/useAuth"
 import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useAuth } from "../../context/useAuth"
 
 export default function Sidebar() {
 
-  const location = useLocation()
-
   const { user } = useAuth()
+
+  const location = useLocation()
 
   const [sidebarHidden, setSidebarHidden] = useState(true)
 
@@ -24,11 +24,11 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className={sidebarHidden ? "sidebar hidden" : "sidebar"}>
+    <div className={sidebarHidden ? "sidebar hidden" : "sidebar"}>
       <div className="logo-container">
         <Link to="http://localhost:3000/">
           <img src={chessIcon} alt="logo" className="logo" />
-          <h1>JustChess.com</h1>
+          <h4>JustChess.com</h4>
         </Link>
       </div>
       <div className="sidebar-container" onClick={() => { handleSidebarToggle() }}>
@@ -58,16 +58,6 @@ export default function Sidebar() {
             </Link>
           </li>
           <li className={
-            location.pathname === "/leaderboard" ?
-              sidebarHidden ? "active-hidden" : "active"
-              : ""
-          }>
-            <Link to="/leaderboard">
-              <img src={trophy} alt="trophy" />
-              <h4>Leaderboard</h4>
-            </Link>
-          </li>
-          <li className={
             location.pathname === "/settings" ?
               sidebarHidden ? "active-hidden" : "active"
               : ""
@@ -77,11 +67,21 @@ export default function Sidebar() {
               <h4>Settings</h4>
             </Link>
           </li>
+          <li className={
+            location.pathname === "/leaderboard" ?
+              sidebarHidden ? "active-hidden" : "active"
+              : ""
+          }>
+            <Link to="/leaderboard">
+              <img src={trophy} alt="trophy" />
+              <h4>Leaderboard</h4>
+            </Link>
+          </li>
         </ul>
       </div>
       {/* <div className="theme-toggle">
         Theme
       </div> */}
-    </aside>
+    </div>
   )
 }

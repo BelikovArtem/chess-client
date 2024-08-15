@@ -34,29 +34,31 @@ export default function Profile() {
   }
 
   return (
-    <section className="profile">
+    <div className="main-container">
       <Sidebar />
-      <h1>
-        Username: {user.username}
-      </h1>
-      <h2>
-        Ratings:
-        <ul>
-          <li>Blitz: {user.blitzRating}</li>
-          <li>Bullet: {user.bulletRating}</li>
-          <li>Rapid: {user.rapidRating}</li>
-        </ul>
-      </h2>
-      <h2>
-        Games count: {user.gamesCount}
-      </h2>
-      <h3>
-        {/* Display date in format mm/dd/yyyy */}
-        Registered at: {
-          formatRegistrationDate(user.registeredAt)
-        }
-      </h3>
-      <Button onClick text="Sign Out"></Button>
-    </section>
+      <div className="content-container">
+        <h1>
+          Username: {user.username}
+        </h1>
+        <h2>
+          Ratings:
+          <ul>
+            <li>Blitz: {user.blitzRating}</li>
+            <li>Bullet: {user.bulletRating}</li>
+            <li>Rapid: {user.rapidRating}</li>
+          </ul>
+        </h2>
+        <h2>
+          Games count: {user.gamesCount}
+        </h2>
+        <h3>
+          {/* Display date in format mm/dd/yyyy */}
+          Registered at: {
+            formatRegistrationDate(user.registeredAt)
+          }
+        </h3>
+        <Button onClick text="Sign Out"></Button>
+      </div>
+    </div>
   )
 }
