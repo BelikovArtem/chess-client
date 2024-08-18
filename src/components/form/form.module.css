@@ -1,24 +1,24 @@
 form {
-  min-width: 50%;
+  margin: auto;
 }
 
 section {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: larger;
 }
 
-.input-wrapper {
+.inputWrapper {
   position: relative;
 }
 
-.input-wrapper input {
-  width: 100%;
-  padding-right: 2.5em;
-  box-sizing: border-box;
+.inputWrapper input {
+  margin: auto;
+  padding-right: 4em;
 }
 
-.toggle-password {
+.togglePassword {
   position: absolute;
   right: 0.10em;
   cursor: pointer;

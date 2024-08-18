@@ -1,4 +1,4 @@
-import "./Form.css"
+import styles from "./form.module.css"
 import check from "../../assets/check.png"
 import error from "../../assets/error.png"
 import show from "../../assets/show.png"
@@ -28,19 +28,19 @@ export default function Form(
           <img
             alt="check"
             src={check}
-            className={isValid ? "valid" : "hide"}
+            className={isValid ? styles.valid : styles.hide}
             width={24}
             height={24}
           />
           <img
             alt="error"
             src={error}
-            className={isValid || !input ? "hide" : "valid"}
+            className={isValid || !input ? styles.hide : styles.valid}
             width={24}
             height={24}
           />
         </label>
-        <div className="input-wrapper">
+        <div className={styles.inputWrapper}>
           <input
             type={inputType}
             id={htmlFor}
@@ -67,7 +67,7 @@ export default function Form(
               onClick={tooglePassword}
               width={24}
               height={24}
-              className="toggle-password"
+              className={styles.togglePassword}
             />
             : null
           }
@@ -77,7 +77,7 @@ export default function Form(
         id="uidnote"
         className={
           isInFocus && input && !isValid ?
-            "instructions" : "hide"
+            styles.instructions : styles.hide
         }
       >
         {minSymbolCount} to 30 characters.<br />

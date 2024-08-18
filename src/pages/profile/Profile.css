@@ -1,9 +1,0 @@
-.content-container ul {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}

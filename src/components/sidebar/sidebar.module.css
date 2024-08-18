@@ -2,7 +2,7 @@
   background-color: #1f1b25;
   min-height: 100%;
   min-width: 15rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-left: 1rem;
 }
 
@@ -14,42 +14,42 @@
   justify-content: flex-start;
 }
 
-.sidebar .logo-container h4 {
+.sidebar .logoContainer h4 {
   font-size: 1.5rem;
 }
 
-.sidebar .logo-container img {
+.sidebar .logoContainer img {
   padding: 0;
   padding-right: 1rem;
   width: auto;
   height: 3rem;
 }
 
-.sidebar .sidebar-container {
+.sidebar .sidebarContainer {
   background-color: white;
   width: 35px;
   height: 35px;
   border-radius: 2rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: 0.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
   border-bottom: 3px solid white;
 }
 
-.sidebar .sidebar-container:after {
+.sidebar .sidebarContainer:after {
   content: "";
   display: block;
   position: absolute;
 }
 
-.sidebar .sidebar-container .sidebar-toggle {
+.sidebar .sidebarContainer .sidebarToggle {
   width: 35px;
   height: 35px;
   cursor: pointer;
   border-radius: 15px;
 }
 
-.sidebar .sidebar-container .sidebar-menu {
+.sidebar .sidebarContainer .sidebarMenu {
   background-color: black;
   content: "";
   position: relative;
@@ -61,7 +61,7 @@
   left: 0.45rem;
 }
 
-.sidebar .sidebar-container .sidebar-menu::after {
+.sidebar .sidebarContainer .sidebarMenu::after {
   content: "";
   background-color: black;
   position: absolute;
@@ -71,7 +71,7 @@
   top: 0.45rem;
 }
 
-.sidebar .sidebar-container .sidebar-menu::before {
+.sidebar .sidebarContainer .sidebarMenu::before {
   content: "";
   background-color: black;
   position: absolute;
@@ -81,11 +81,11 @@
   top: -0.45rem;
 }
 
-.sidebar .content-container h4 {
+.sidebar .contentContainer h4 {
   font-size: 1.25rem;
 }
 
-.sidebar .content-container ul {
+.sidebar .contentContainer ul {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -95,7 +95,7 @@
   width: 100%;
 }
 
-.sidebar .content-container ul li {
+.sidebar .contentContainer ul li {
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -106,14 +106,14 @@
   height: 64px;
 }
 
-.sidebar .content-container ul li.active {
+.sidebar .contentContainer ul li.active {
   border-radius: 15px;
   border: solid white;
   border-width: 2px;
   padding-right: 1rem;
 }
 
-.sidebar .content-container ul li img {
+.sidebar .contentContainer ul li img {
   padding: 0;
   width: auto;
   height: 3rem;
@@ -132,17 +132,15 @@
   display: none;
 }
 
-.sidebar .content-container ul li.active-hidden {
+.sidebar .contentContainer ul li.activeHidden {
   border-radius: 15px;
   border: solid white;
   border-width: 2px;
 }
 
-.sidebar .content-container ul li.active-hidden img {
+.sidebar .contentContainer ul li.activeHidden img {
   padding-right: 0;
 }
-
-
 
 h1.title.hidden {
   display: none;

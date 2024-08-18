@@ -6,7 +6,7 @@ import profile from "../../assets/profile.png"
 import settings from "../../assets/settings.png"
 import chessIcon from "../../assets/chess-icon.png"
 
-import "./Sidebar.css"
+import styles from "./sidebar.module.css"
 
 import { useState } from "react"
 import { useAuth } from "../../context/useAuth"
@@ -24,22 +24,22 @@ export default function Sidebar() {
   }
 
   return (
-    <div className={sidebarHidden ? "sidebar hidden" : "sidebar"}>
-      <div className="logo-container">
+    <div className={`${styles.sidebar} ${sidebarHidden ? styles.hidden : ""}`}>
+      <div className={styles.logoContainer}>
         <Link to="http://localhost:3000/">
-          <img src={chessIcon} alt="logo" className="logo" />
+          <img src={chessIcon} alt="logo" className={styles.logo} />
           <h4>JustChess.com</h4>
         </Link>
       </div>
-      <div className="sidebar-container" onClick={() => { handleSidebarToggle() }}>
-        <div className="sidebar-toggle" />
-        <div className="sidebar-menu" />
+      <div className={styles.sidebarContainer} onClick={() => { handleSidebarToggle() }}>
+        <div className={styles.sidebarToggle} />
+        <div className={styles.sidebarMenu} />
       </div>
-      <div className="content-container">
+      <div className={styles.contentContainer}>
         <ul>
           <li className={
             location.pathname === "/profile" ?
-              (sidebarHidden ? "active-hidden" : "active")
+              (sidebarHidden ? styles.activeHidden : styles.active)
               : ""
           }>
             <Link to="http://localhost:3000/profile">
@@ -49,7 +49,7 @@ export default function Sidebar() {
           </li>
           <li className={
             location.pathname === "/play" ?
-              sidebarHidden ? "active-hidden" : "active"
+              sidebarHidden ? styles.activeHidden : styles.active
               : ""
           }>
             <Link to="http://localhost:3000/play">
@@ -59,7 +59,7 @@ export default function Sidebar() {
           </li>
           <li className={
             location.pathname === "/settings" ?
-              sidebarHidden ? "active-hidden" : "active"
+              sidebarHidden ? styles.activeHidden : styles.active
               : ""
           }>
             <Link to="/settings">
@@ -69,7 +69,7 @@ export default function Sidebar() {
           </li>
           <li className={
             location.pathname === "/leaderboard" ?
-              sidebarHidden ? "active-hidden" : "active"
+              sidebarHidden ? styles.activeHidden : styles.active
               : ""
           }>
             <Link to="/leaderboard">
@@ -79,9 +79,6 @@ export default function Sidebar() {
           </li>
         </ul>
       </div>
-      {/* <div className="theme-toggle">
-        Theme
-      </div> */}
     </div>
   )
 }

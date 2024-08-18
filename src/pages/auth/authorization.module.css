@@ -1,14 +1,13 @@
-.auth-container {
+.contentContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   border: 3px solid #949494;
   border-radius: 10px;
   margin: auto;
   margin-top: 5%;
-  min-height: 70%;
   max-width: 50%;
   background-color: #1f1b25;
 }
@@ -17,18 +16,13 @@
   display: none;
 }
 
-.error-message {
+.errorMessage {
   color: red;
   background-color: orange;
   font-size: x-large;
 }
 
-section Button {
-  background-color: #3692e7;
-  border: 2px solid #294a68;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+.contentContainer Button {
   height: 50px;
   width: 150px;
   margin-bottom: 5%;

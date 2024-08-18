@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import "./Authorization.css"
+import styles from "./authorization.module.css"
 import Form from "../../components/form/Form"
-import Button from "../../components/button/Button"
+import Button from "../../components/button/Button.jsx"
 
 import api from "../../api/api.js"
 
@@ -64,7 +64,7 @@ export default function Authorization() {
   }
 
   return (
-    <section className="auth-container">
+    <div className={styles.contentContainer}>
       <h1>
         Authorization
       </h1>
@@ -87,7 +87,7 @@ export default function Authorization() {
         minSymbolCount={8}
       />
       <p
-        className={errMsg ? "error-message" : "hide"}
+        className={errMsg ? styles.errorMessage : styles.hide}
       >
         {errMsg}
       </p>
@@ -99,6 +99,6 @@ export default function Authorization() {
         onClickHandler={handleSignUp}
         text="Sign up"
       />
-    </section>
+    </div >
   )
 }

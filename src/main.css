@@ -13,13 +13,13 @@ body {
   min-height: 100vh;
 }
 
-.main-container {
+.mainContainer {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
 }
 
-.content-container {
+.contentContainer {
   display: flex;
   flex-direction: column;
 }

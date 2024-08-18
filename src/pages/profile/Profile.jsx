@@ -1,7 +1,8 @@
 import { useAuth } from "../../context/useAuth"
-import Button from "../../components/button/Button"
+import Button from "../../components/button/Button.jsx"
 import Sidebar from "../../components/sidebar/Sidebar.jsx"
-import "./Profile.css"
+import styles from "./profile.module.css"
+import ProfileCard from "../../components/profile-card/ProfileCard.jsx"
 
 import { useNavigate } from "react-router-dom"
 
@@ -15,50 +16,36 @@ export default function Profile() {
 
   const [errMsg, setErrMsg] = useState("")
 
-  function formatRegistrationDate(dateStr) {
-    // timestamp in format yyyy-mm-dd
-    const timestamp = dateStr.split("T")
-    // [ "yyyy", "mm", "dd" ]
-    const dateParts = timestamp[0].split("-")
-    return `${dateParts[1]}/${dateParts[2]}/${dateParts[0]}`  // mm/dd/yyyy
-  }
-
   async function handleSignOut() {
     const isSuccess = await api.signOut()
 
     if (isSuccess) {
       navigate("/auth")
     } else {
-
+      setErrMsg("Internal server error, please try later")
     }
   }
 
   return (
-    <div className="main-container">
+    <div className="mainContainer">
       <Sidebar />
-      <div className="content-container">
-        <h1>
-          Username: {user.username}
-        </h1>
-        <h2>
-          Ratings:
+      <div className={styles.contentContainer}>
+        <div className={styles.userInfo}>
+          <ProfileCard />
+          <div className={styles.options}>
+            <Button text="Edit Profile" />
+            <Button onClickHandler={handleSignOut} text="Sign Out" />
+          </div>
+        </div>
+        <div className={styles.ratingsInfo}>
+          <h2>Ratings</h2>
           <ul>
-            <li>Blitz: {user.blitzRating}</li>
-            <li>Bullet: {user.bulletRating}</li>
-            <li>Rapid: {user.rapidRating}</li>
+            <li>Blitz {user.blitzRating}</li>
+            <li>Rapid {user.rapidRating}</li>
+            <li>Bullet {user.bulletRating}</li>
           </ul>
-        </h2>
-        <h2>
-          Games count: {user.gamesCount}
-        </h2>
-        <h3>
-          {/* Display date in format mm/dd/yyyy */}
-          Registered at: {
-            formatRegistrationDate(user.registeredAt)
-          }
-        </h3>
-        <Button onClick text="Sign Out"></Button>
+        </div>
       </div>
-    </div>
+    </div >
   )
 }

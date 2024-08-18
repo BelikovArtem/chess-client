@@ -3,9 +3,9 @@ import Sidebar from "./components/sidebar/Sidebar"
 
 function App() {
   return (
-    <div className="main-container">
+    <div className="mainContainer">
       <Sidebar />
-      <div className="content-container">
+      <div className="contentContainer">
 
         <p>
           What is Lorem Ipsum?

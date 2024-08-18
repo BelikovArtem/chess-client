@@ -13,15 +13,18 @@ import {
   RouterProvider,
 } from "react-router-dom"
 
-const routes = createRoutesFromElements(
-  <Route element={<UserProvider />}>
-    <Route path="/" element={<App />} />
-    <Route path="/auth" element={<Authorization />} />
-    <Route path="/profile" element={<Profile />} />
+const privateRoutes = createRoutesFromElements(
+  <Route id="0" element={<UserProvider />}>
+    <Route id="1" path="/" element={<App />} />
+    <Route id="2" path="/profile" element={<Profile />} />
   </Route>
 )
 
-const router = createBrowserRouter(routes)
+const authRoute = createRoutesFromElements(
+  <Route id="3" path="/auth" element={<Authorization />} />
+)
+
+const router = createBrowserRouter([...privateRoutes, ...authRoute])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

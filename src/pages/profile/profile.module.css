@@ -1,0 +1,39 @@
+.contentContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  display: inherit;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.contentContainer ul {
+  list-style: none;
+}
+
+.contentContainer .userInfo {
+  margin-bottom: auto;
+  display: inherit;
+  flex-direction: column;
+}
+
+.contentContainer .userInfo .options {
+  display: inherit;
+  flex-direction: row;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.contentContainer .userInfo .options button {
+  flex-grow: 1;
+  height: 3rem;
+}
+
+.contentContainer .ratings-info {
+  display: inherit;
+  flex-direction: column;
+
+  margin-bottom: auto;
+  /* margin-right: */
+  background-color: #1f1b25;
+}
